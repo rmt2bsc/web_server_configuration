@@ -10,7 +10,7 @@
 	<PaginationPageSize>20</PaginationPageSize>
 	<PollingPage>/polling_wait_page.jsp</PollingPage>
 	<ProtocolInformation>http</ProtocolInformation>
-	<RemoteSrvcApp>RMT2Gateway</RemoteSrvcApp>
+	<RemoteSrvcApp>ServiceDispatch</RemoteSrvcApp>
 	<RptFileExt>.xsl</RptFileExt>
 	<RptXsltPath>/reports</RptXsltPath>
 	<SerialDrive>c:</SerialDrive>
@@ -27,7 +27,7 @@
 	<!-- ******************************* -->
 	<SystemProperties>
 	   <environment></environment>
-	   <soaphost>http://localhost:8080/RMT2Gateway/soapEngine</soaphost>
+	   <soaphost>http://localhost:8080/ServiceDispatch/soapEngine</soaphost>
 	   <SaxDriver>org.apache.xerces.parsers.SAXParser</SaxDriver>
 	   <EmailConfig>
 	       <Authentication>true</Authentication>
@@ -70,18 +70,6 @@
 		    <UseAuthentication>false</UseAuthentication>
 		    <InitialContextFactory>org.apache.activemq.jndi.ActiveMQInitialContextFactory</InitialContextFactory>
 		    <ConnectionFactory>ConnectionFactory</ConnectionFactory>
-		    <ProviderUrl>tcp://localhost:61616</ProviderUrl>
-		    <UserId>admin</UserId>
-		    <Password>admin</Password>
-		    <MaxConnectAttemps>30</MaxConnectAttemps>
-		    <ConnectAttemptInterval>30000</ConnectAttemptInterval>
-		</System>
-		<System>
-		    <Name>For Example Only.  Delete before use</Name>
-		    <UseJndi>true</UseJndi>
-		    <UseAuthentication>false</UseAuthentication>
-		    <InitialContextFactory>org.apache.activemq.jndi.ActiveMQInitialContextFactory</InitialContextFactory>
-		    <ConnectionFactory>org.apache.activemq.ActiveMQConnectionFactory;</ConnectionFactory>
 		    <ProviderUrl>tcp://localhost:61616</ProviderUrl>
 		    <UserId>admin</UserId>
 		    <Password>admin</Password>
@@ -131,7 +119,7 @@
 		</Service>
 		<Service>
 			<Name>Get Business Records</Name>
-			<ServiceType>SOAP</ServiceType>
+			<ServiceType>JMS</ServiceType>
 			<application>multimedia</application>
 			<module>content</module>
 			<transaction>RQ_content_search</transaction>
