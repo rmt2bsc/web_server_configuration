@@ -104,6 +104,7 @@
 			<destination>queue.Authentication</destination>
 			<description>Functions to log user into system</description>
 			<secure>false</secure>
+			<deliveryMode>SYNC</deliveryMode>
 			<host></host>
 		</Service>
 		<Service>
@@ -115,17 +116,31 @@
 			<destination>contacts/unsecureRequestProcessor/Services</destination>
 			<description>Retrieves Business Contact data by long name, tax id, and/or main phone number</description>
 			<secure>true</secure>
+			<deliveryMode>SYNC</deliveryMode>
 			<host></host>
 		</Service>
 		<Service>
-			<Name>Get Business Records</Name>
+			<Name>Get Image Content</Name>
 			<ServiceType>JMS</ServiceType>
-			<application>multimedia</application>
-			<module>content</module>
-			<transaction>RQ_content_search</transaction>
-			<destination>multimedia/unsecureRequestProcessor/Services</destination>
+			<application>media</application>
+			<module>document</module>
+			<transaction>getContent</transaction>
+			<destination>multimedia</destination>
 			<description>Fetches images of documents from the MIME database</description>
 			<secure>false</secure>
+			<deliveryMode>SYNC</deliveryMode>
+			<host>RMTDALDB01:8080</host>
+		</Service>
+		<Service>
+			<Name>Save Image Content</Name>
+			<ServiceType>JMS</ServiceType>
+			<application>media</application>
+			<module>document</module>
+			<transaction>saveContent</transaction>
+			<destination>multimedia</destination>
+			<description>Saves image content to the MIME database</description>
+			<secure>false</secure>
+			<deliveryMode>SYNC</deliveryMode>
 			<host>RMTDALDB01:8080</host>
 		</Service>
 	</ServiceRegistry>	
