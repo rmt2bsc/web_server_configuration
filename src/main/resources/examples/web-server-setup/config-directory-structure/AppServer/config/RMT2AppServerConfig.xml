@@ -27,7 +27,7 @@
 	<!-- ******************************* -->
 	<SystemProperties>
 	   <environment></environment>
-	   <soaphost>http://localhost:8080/ServiceDispatch/soapEngine</soaphost>
+	   <soaphost>http://localhost:8080/server-external-webservices/services/web</soaphost>
 	   <SaxDriver>org.apache.xerces.parsers.SAXParser</SaxDriver>
 	   <EmailConfig>
 	       <Authentication>true</Authentication>
