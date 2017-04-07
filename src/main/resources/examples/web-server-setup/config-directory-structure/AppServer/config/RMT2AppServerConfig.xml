@@ -80,22 +80,22 @@
 	<DestinationMappings>
 		<Destination>
 			<Rmt2Name>JMS_DEST_ADDRESSBOOK_DEST</Rmt2Name>
-			<JndiName>queue.addressbook</JndiName>
+			<JndiName>addressbook</JndiName>
 			<ContainSuffix>false</ContainSuffix>
 		</Destination>
 		<Destination>
 			<Rmt2Name>JMS_DEST_ACCOUNTING_DEST</Rmt2Name>
-			<JndiName>queue.accounting</JndiName>
+			<JndiName>accounting</JndiName>
 			<ContainSuffix>false</ContainSuffix>
 		</Destination>
 		<Destination>
 			<Rmt2Name>JMS_DEST_PROJECTTRACKER_DEST</Rmt2Name>
-			<JndiName>queue.projecttracker</JndiName>
+			<JndiName>projecttracker</JndiName>
 			<ContainSuffix>false</ContainSuffix>
 		</Destination>
 		<Destination>
 			<Rmt2Name>JMS_DEST_MEDIA_DEST</Rmt2Name>
-			<JndiName>queue.media</JndiName>
+			<JndiName>media</JndiName>
 			<ContainSuffix>false</ContainSuffix>
 		</Destination>
  </DestinationMappings>
