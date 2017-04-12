@@ -79,23 +79,33 @@
 	</MessagingSystemsInfo>
 	<DestinationMappings>
 		<Destination>
-			<Rmt2Name>JMS_DEST_ADDRESSBOOK_DEST</Rmt2Name>
-			<JndiName>addressbook</JndiName>
+			<Rmt2Name>JMS_P2P_ADDRESSBOOK_DEST</Rmt2Name>
+			<JndiName>addressbook-p2p-dest</JndiName>
 			<ContainSuffix>false</ContainSuffix>
 		</Destination>
 		<Destination>
-			<Rmt2Name>JMS_DEST_ACCOUNTING_DEST</Rmt2Name>
-			<JndiName>accounting</JndiName>
+			<Rmt2Name>JMS_PUBSUB_ADDRESSBOOK_DEST</Rmt2Name>
+			<JndiName>addressbook-pubsub-dest</JndiName>
 			<ContainSuffix>false</ContainSuffix>
 		</Destination>
 		<Destination>
-			<Rmt2Name>JMS_DEST_PROJECTTRACKER_DEST</Rmt2Name>
-			<JndiName>projecttracker</JndiName>
+			<Rmt2Name>JMS_P2P_ACCOUNTING_DEST</Rmt2Name>
+			<JndiName>accounting-p2p-dest</JndiName>
 			<ContainSuffix>false</ContainSuffix>
 		</Destination>
 		<Destination>
-			<Rmt2Name>JMS_DEST_MEDIA_DEST</Rmt2Name>
-			<JndiName>media</JndiName>
+			<Rmt2Name>JMS_P2P_PROJECTTRACKER_DEST</Rmt2Name>
+			<JndiName>projecttracker-p2p-dest</JndiName>
+			<ContainSuffix>false</ContainSuffix>
+		</Destination>
+		<Destination>
+			<Rmt2Name>JMS_P2P_MEDIA_DEST</Rmt2Name>
+			<JndiName>media-p2p-dest</JndiName>
+			<ContainSuffix>false</ContainSuffix>
+		</Destination>
+		<Destination>
+			<Rmt2Name>JMS_P2P_SECURITY_DEST</Rmt2Name>
+			<JndiName>security-p2p-dest</JndiName>
 			<ContainSuffix>false</ContainSuffix>
 		</Destination>
  </DestinationMappings>
@@ -106,7 +116,7 @@
 			<application>addressbook</application>
 			<module>profile</module>
 			<transaction>GET_ALL_BUSINESS_CONTACTS</transaction>
-			<destination>JMS_DEST_ADDRESSBOOK_DEST</destination>
+			<destination>JMS_P2P_ADDRESSBOOK_DEST</destination>
 			<description>Retrieves all Business Contact profiles</description>
 			<secure>true</secure>
 			<deliveryMode>SYNC</deliveryMode>
@@ -118,7 +128,7 @@
 			<application>addressbook</application>
 			<module>profile</module>
 			<transaction>GET_BUSINESS_CONTACT</transaction>
-			<destination>JMS_DEST_ADDRESSBOOK_DEST</destination>
+			<destination>JMS_P2P_ADDRESSBOOK_DEST</destination>
 			<description>Retrieves a single Business Contact profile</description>
 			<secure>true</secure>
 			<deliveryMode>SYNC</deliveryMode>
@@ -130,7 +140,7 @@
 			<application>addressbook</application>
 			<module>profile</module>
 			<transaction>GET_BUSINESS_CONTACTS_USING_CRITERIA</transaction>
-			<destination>JMS_DEST_ADDRESSBOOK_DEST</destination>
+			<destination>JMS_P2P_ADDRESSBOOK_DEST</destination>
 			<description>Retrieves Business Contact profile(s) using one or more selection criteria</description>
 			<secure>true</secure>
 			<deliveryMode>SYNC</deliveryMode>
@@ -142,7 +152,7 @@
 			<application>addressbook</application>
 			<module>profile</module>
 			<transaction>ADD_BUSINESS_CONTACT</transaction>
-			<destination>JMS_DEST_ADDRESSBOOK_DEST</destination>
+			<destination>JMS_P2P_ADDRESSBOOK_DEST</destination>
 			<description>Adds a business contact profile</description>
 			<secure>true</secure>
 			<deliveryMode>SYNC</deliveryMode>
@@ -154,7 +164,7 @@
 			<application>addressbook</application>
 			<module>profile</module>
 			<transaction>UPDATE_BUSINESS_CONTACT</transaction>
-			<destination>JMS_DEST_ADDRESSBOOK_DEST</destination>
+			<destination>JMS_P2P_ADDRESSBOOK_DEST</destination>
 			<description>Update a business contact profile</description>
 			<secure>true</secure>
 			<deliveryMode>SYNC</deliveryMode>
@@ -166,7 +176,7 @@
 			<application>addressbook</application>
 			<module>profile</module>
 			<transaction>DELETE_BUSINESS_CONTACT</transaction>
-			<destination>JMS_DEST_ADDRESSBOOK_DEST</destination>
+			<destination>JMS_P2P_ADDRESSBOOK_DEST</destination>
 			<description>Delete a business contact profile</description>
 			<secure>true</secure>
 			<deliveryMode>SYNC</deliveryMode>
@@ -178,7 +188,7 @@
 			<application>media</application>
 			<module>document</module>
 			<transaction>GET_CONTENT_ATTACHMENT</transaction>
-			<destination>JMS_DEST_MEDIA_DEST</destination>
+			<destination>JMS_P2P_MEDIA_DEST</destination>
 			<description>Fetches the content of a single document</description>
 			<secure>false</secure>
 			<deliveryMode>SYNC</deliveryMode>
