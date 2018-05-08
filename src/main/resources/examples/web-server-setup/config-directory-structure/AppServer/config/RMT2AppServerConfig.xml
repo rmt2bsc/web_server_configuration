@@ -28,7 +28,9 @@
 	<SystemProperties>
 	   <environment></environment>
 	   <soaphost>http://localhost:8080/server-external-webservices/services/web</soaphost>
-	   <SaxDriver>org.apache.xerces.parsers.SAXParser</SaxDriver>
+	   <!-- THe SaxDriver tag is no longer needed since we are now using the javax.xml.parsers.SAXParser packaged within the SDK  -->
+	   <!-- <SaxDriver>org.apache.xerces.parsers.SAXParser</SaxDriver> -->
+	   <SaxDriver>javax.xml.parsers.SAXParser</SaxDriver>
 	   <EmailConfig>
 	       <Authentication>true</Authentication>
 	       <Defaultcontent>text/html</Defaultcontent>
@@ -41,7 +43,7 @@
 	       <TemplatePath>\\source\\dotcom5\\aviall\\resources\\templates\\</TemplatePath> 
 	   </EmailConfig>
 	   <ConsumerMsgHandlerMappingsKey>msg_handler_reg_pkg</ConsumerMsgHandlerMappingsKey>
-	   <ConsumerMsgHandlerMappingsLocation>org.rmt2.config.transactions</ConsumerMsgHandlerMappingsLocation>
+	   <ConsumerMsgHandlerMappingsLocation>config.transactions</ConsumerMsgHandlerMappingsLocation>
 	</SystemProperties>
 	
 	<!-- ******************************************************************** -->
