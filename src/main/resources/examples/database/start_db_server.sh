@@ -4,8 +4,11 @@
 ##############################################################
 ### Uncomment one of the following based on target platform
 ##############################################################
-# Windows - Should be implemented as a Windows Service via Sybase Central or...
-# dbsvc -as -s auto -t network -w rmt2devdb02 "C:\Program Files\SQL Anywhere 16\Bin64\dbsrv16.exe" -x tcpip -c 512m /data/sybase/v16/accounting.db /data/sybase/v16/authentication.db /data/sybase/v16/contacts.db /data/sybase/v16/mime.db /data/sybase/v16/projecttracker.db /data/sybase/v16/rmt2.db
+# Windows 
+# Can be implemented as a Windows Service via Sybase Central 
+# or create the windows service via command line for SQL Anywhere v16 or higher...
+# dbsvc -as -s auto -t network -w rmt2devdb02 -n rmt2devdb02 "C:\Program Files\SQL Anywhere 16\Bin64\dbsrv16.exe" -x tcpip -c 512m /data/sybase/v16/accounting.db /data/sybase/v16/authentication.db /data/sybase/v16/contacts.db /data/sybase/v16/mime.db /data/sybase/v16/projecttracker.db /data/sybase/v16/rmt2.db
+
 # or as stand alone...
 # dbsrv16 -n rmt2devdb02 /data/sybase/v16/accounting.db /data/sybase/v16/authentication.db /data/sybase/v16/contacts.db /data/sybase/v16/mime.db /data/sybase/v16/projecttracker.db /data/sybase/v16/rmt2.db
 
