@@ -29,4 +29,7 @@ prompt
 put $file.gz
 quit
 EOF
+
+rm /rmt2/db_archives/*.*
+
 exit 0
