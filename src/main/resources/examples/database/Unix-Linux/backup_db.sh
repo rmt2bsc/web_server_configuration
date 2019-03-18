@@ -16,7 +16,7 @@ chmod ugo+rwx $loc/$file
 cd $loc
 
 # ftp file to another server
-HOST=192.168.0.102   #rmtdalmedia01
+HOST=192.168.0.101   #rmtdalmedia01
 USER=admin02
 PASSWD=610hoover
 echo FTP $loc/$file to $HOST
@@ -28,6 +28,12 @@ binary
 put $file
 quit
 EOF
+
+if [ $? -ne 0 ]
+   # Do error handleing here...
+   exit 1
+fi
+
 
 rm /rmt2/db_archives/*.*
 
