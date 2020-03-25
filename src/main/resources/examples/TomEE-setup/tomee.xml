@@ -33,7 +33,7 @@
   	JdbcUrl jdbc:sybase:Tds:localhost:2638?ServiceName=projecttracker
   	UserName dba
   	Password sql
-  	JtaManaged true
+  	JtaManaged false
 </Resource>
 
 <Resource id = "jdbc/accounting" type="DataSource">
@@ -41,7 +41,7 @@
 	JdbcUrl jdbc:sybase:Tds:localhost:2638?ServiceName=accounting
 	UserName dba
 	Password sql
-	JtaManaged true
+	JtaManaged false
 </Resource>
 
 <Resource id = "jdbc/authentication" type="DataSource">
@@ -49,14 +49,14 @@
 	JdbcUrl jdbc:sybase:Tds:localhost:2638?ServiceName=authentication
 	UserName authentication_user
 	Password sql
-	JtaManaged true
+	JtaManaged false
 </Resource>
 <Resource id = "jdbc/addressbook" type="DataSource">
 	JdbcDriver com.sybase.jdbc3.jdbc.SybDriver
 	JdbcUrl jdbc:sybase:Tds:localhost:2638?ServiceName=contacts
 	UserName dba
 	Password sql
-	JtaManaged true
+	JtaManaged false
 </Resource>
 
 <Resource id = "jdbc/mime" type="DataSource">
@@ -64,7 +64,7 @@
 	JdbcUrl jdbc:sybase:Tds:localhost:2638?ServiceName=mime
 	UserName dba
 	Password sql
-	JtaManaged true
+	JtaManaged false
 </Resource>
 
   <!-- activate next line to be able to deploy applications in apps -->
