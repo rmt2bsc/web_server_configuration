@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomee>
+  <!-- see http://tomee.apache.org/containers-and-resources.html -->
+<!--
+<Resource id = "My Unmanaged DataSource" type="DataSource">
+	JdbcDriver org.hsqldb.jdbcDriver
+	JdbcUrl jdbc:hsqldb:file:data/hsqldb/hsqldb
+	UserName sa
+	Password
+	JtaManaged false
+</Resource>
+-->
+
+ <Resource id="MyJmsResourceAdapter" type="ActiveMQResourceAdapter">
+         # Do not start the embedded ActiveMQ broker
+         BrokerXmlConfig  =
+         ServerUrl = tcp://localhost:61616
+ </Resource>
+ 
+ <Resource id="MyJmsConnectionFactory" type="javax.jms.ConnectionFactory">
+         ResourceAdapter = MyJmsResourceAdapter
+ </Resource>
+ 
+ <Container id="MyJmsMdbContainer" ctype="MESSAGE">
+         ResourceAdapter = MyJmsResourceAdapter
+ </Container>
+ 
+ <Resource id="FooQueue" type="javax.jms.Queue"/>
+ <Resource id="BarTopic" type="javax.jms.Topic"/>
+
+  <Resource id = "jdbc/projecttracker" type="DataSource">
+  	JdbcDriver com.sybase.jdbc3.jdbc.SybDriver
+  	JdbcUrl jdbc:sybase:Tds:localhost:2638?ServiceName=projecttracker
+  	UserName dba
+  	Password sql
+  	JtaManaged true
+</Resource>
+
+<Resource id = "jdbc/accounting" type="DataSource">
+	JdbcDriver com.sybase.jdbc3.jdbc.SybDriver
+	JdbcUrl jdbc:sybase:Tds:localhost:2638?ServiceName=accounting
+	UserName dba
+	Password sql
+	JtaManaged true
+</Resource>
+
+<Resource id = "jdbc/authentication" type="DataSource">
+	JdbcDriver com.sybase.jdbc3.jdbc.SybDriver
+	JdbcUrl jdbc:sybase:Tds:localhost:2638?ServiceName=authentication
+	UserName authentication_user
+	Password sql
+	JtaManaged true
+</Resource>
+<Resource id = "jdbc/addressbook" type="DataSource">
+	JdbcDriver com.sybase.jdbc3.jdbc.SybDriver
+	JdbcUrl jdbc:sybase:Tds:localhost:2638?ServiceName=contacts
+	UserName dba
+	Password sql
+	JtaManaged true
+</Resource>
+
+<Resource id = "jdbc/mime" type="DataSource">
+	JdbcDriver com.sybase.jdbc3.jdbc.SybDriver
+	JdbcUrl jdbc:sybase:Tds:localhost:2638?ServiceName=mime
+	UserName dba
+	Password sql
+	JtaManaged true
+</Resource>
+
+  <!-- activate next line to be able to deploy applications in apps -->
+  <Deployments dir="apps" /> 
+</tomee>
