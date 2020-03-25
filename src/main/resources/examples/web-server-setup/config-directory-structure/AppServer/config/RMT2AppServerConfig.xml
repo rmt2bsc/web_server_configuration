@@ -105,19 +105,24 @@
 		</System>
 	</MessagingSystemsInfo>
 	<DestinationMappings>
-		<Destination>
-			<Rmt2Name>JMS_DEST_CONTACT_QUEUE</Rmt2Name>
-			<JndiName>Contacts</JndiName>
+		<<Destination>
+			<Rmt2Name>JMS_CONTACT_QUEUE</Rmt2Name>
+			<JndiName>rmt2.queue.contacts</JndiName>
 			<ContainSuffix>false</ContainSuffix>
 		</Destination>
 		<Destination>
-			<Rmt2Name>JMS_DEST_ACCOUNTING_QUEUE</Rmt2Name>
-			<JndiName>Accounting</JndiName>
+			<Rmt2Name>JMS_ACCOUNTING_QUEUE</Rmt2Name>
+			<JndiName>rmt2.queue.accounting</JndiName>
 			<ContainSuffix>false</ContainSuffix>
 		</Destination>
 		<Destination>
-			<Rmt2Name>JMS_DEST_PROJECTTRACKER_QUEUE</Rmt2Name>
-			<JndiName>ProjectTracker</JndiName>
+			<Rmt2Name>JMS_PROJECTTRACKER_QUEUE</Rmt2Name>
+			<JndiName>rmt2.queue.projecttracker</JndiName>
+			<ContainSuffix>false</ContainSuffix>
+		</Destination>
+		<Destination>
+			<Rmt2Name>HTTP_CONTACT</Rmt2Name>
+			<JndiName>contacts/unsecureRequestProcessor/Services</JndiName>
 			<ContainSuffix>false</ContainSuffix>
 		</Destination>
  </DestinationMappings>
@@ -128,7 +133,7 @@
 			<application>authentication</application>
 			<module>users</module>
 			<transaction>login</transaction>
-			<destination>queue.Authentication</destination>
+			<destination>JMS_ACCOUNTING_QUEUE</destination>
 			<description>Functions to log user into system</description>
 			<secure>false</secure>
 			<host></host>
@@ -139,7 +144,7 @@
 			<application>addressbook</application>
 			<module>businesscontacts</module>
 			<transaction>getBusiness</transaction>
-			<destination>contacts/unsecureRequestProcessor/Services</destination>
+			<destination>HTTP_CONTACT</destination>
 			<description>Retrieves Business Contact data by long name, tax id, and/or main phone number</description>
 			<secure>true</secure>
 			<host></host>
