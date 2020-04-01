@@ -28,14 +28,15 @@
  <Resource id="FooQueue" type="javax.jms.Queue"/>
  <Resource id="BarTopic" type="javax.jms.Topic"/>
 
-  <Resource id = "jdbc/projecttracker" type="DataSource">
+
+
+<Resource id = "jdbc/projecttracker" type="DataSource">
   	JdbcDriver com.sybase.jdbc3.jdbc.SybDriver
   	JdbcUrl jdbc:sybase:Tds:localhost:2638?ServiceName=projecttracker
   	UserName dba
   	Password sql
   	JtaManaged false
 </Resource>
-
 <Resource id = "jdbc/accounting" type="DataSource">
 	JdbcDriver com.sybase.jdbc3.jdbc.SybDriver
 	JdbcUrl jdbc:sybase:Tds:localhost:2638?ServiceName=accounting
@@ -43,7 +44,6 @@
 	Password sql
 	JtaManaged false
 </Resource>
-
 <Resource id = "jdbc/authentication" type="DataSource">
 	JdbcDriver com.sybase.jdbc3.jdbc.SybDriver
 	JdbcUrl jdbc:sybase:Tds:localhost:2638?ServiceName=authentication
@@ -58,7 +58,6 @@
 	Password sql
 	JtaManaged false
 </Resource>
-
 <Resource id = "jdbc/mime" type="DataSource">
 	JdbcDriver com.sybase.jdbc3.jdbc.SybDriver
 	JdbcUrl jdbc:sybase:Tds:localhost:2638?ServiceName=mime

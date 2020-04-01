@@ -76,6 +76,12 @@
       <res-auth>Container</res-auth>
   </resource-ref>
   <resource-ref>
+      <description>Multimedia DB Connection</description>
+      <res-ref-name>jdbc/mime</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+  </resource-ref>
+  <resource-ref>
       <description>RMT2 DB Connection</description>
       <res-ref-name>jdbc/rmt2</res-ref-name>
       <res-type>javax.sql.DataSource</res-type>

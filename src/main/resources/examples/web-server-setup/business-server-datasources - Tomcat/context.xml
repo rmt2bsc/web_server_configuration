@@ -11,7 +11,7 @@
 
     <!-- JDBC Datasource resources -->
   <Resource name="jdbc/authentication"
-	          auth="Container"
+	    auth="Container"
 		  type="javax.sql.DataSource"
 		  driverClassName="com.sybase.jdbc3.jdbc.SybDriver"
 		  url="jdbc:sybase:Tds:localhost:2638?ServiceName=authentication"   
@@ -20,7 +20,7 @@
 		  maxActive="10" maxIdle="5" maxWait="10000"/>
 			  
 	<Resource name="jdbc/mime"
-	          auth="Container"
+	    auth="Container"
 		  type="javax.sql.DataSource"
 		  driverClassName="com.sybase.jdbc3.jdbc.SybDriver"
 		  url="jdbc:sybase:Tds:localhost:2638?ServiceName=mime"   
@@ -29,7 +29,7 @@
 		  maxActive="10" maxIdle="5" maxWait="10000"/>
 
 	<Resource name="jdbc/addressbook"
-	          auth="Container"
+	    auth="Container"
 		  type="javax.sql.DataSource"
 		  driverClassName="com.sybase.jdbc3.jdbc.SybDriver"
 		  url="jdbc:sybase:Tds:localhost:2638?ServiceName=addressbook"   
@@ -38,7 +38,7 @@
 		  maxActive="10" maxIdle="5" maxWait="10000"/>
 			  
 	<Resource name="jdbc/accounting"
-	          auth="Container"
+	    auth="Container"
 		  type="javax.sql.DataSource"
 		  driverClassName="com.sybase.jdbc3.jdbc.SybDriver"
 		  url="jdbc:sybase:Tds:localhost:2638?ServiceName=accounting"   
@@ -47,7 +47,7 @@
 		  maxActive="10" maxIdle="5" maxWait="10000"/>			  
 			  
 	<Resource name="jdbc/projecttracker"
-	          auth="Container"
+	    auth="Container"
 		  type="javax.sql.DataSource"
 		  driverClassName="com.sybase.jdbc3.jdbc.SybDriver"
 		  url="jdbc:sybase:Tds:localhost:2638?ServiceName=projecttracker"   
@@ -56,7 +56,7 @@
 		  maxActive="10" maxIdle="5" maxWait="10000"/>		  		
 					  
   <Resource name="jdbc/rmt2"
-	          auth="Container"
+	    auth="Container"
 		  type="javax.sql.DataSource"
 		  driverClassName="com.sybase.jdbc3.jdbc.SybDriver"
 		  url="jdbc:sybase:Tds:localhost:2638?ServiceName=rmt2"   
