@@ -11,6 +11,7 @@
 </Resource>
 -->
 
+<!--  For connecting to Active MQ -->
  <Resource id="MyJmsResourceAdapter" type="ActiveMQResourceAdapter">
          # Do not start the embedded ActiveMQ broker
          BrokerXmlConfig  =
@@ -28,6 +29,8 @@
  <Resource id="FooQueue" type="javax.jms.Queue"/>
  <Resource id="BarTopic" type="javax.jms.Topic"/>
 
+
+<!--  For setting up JDBC datasoruces at the level of TomEE Server.   Remove if using WEB_INF/resources.xml at the WebApp level  -->
   <Resource id = "jdbc/projecttracker" type="DataSource">
   	JdbcDriver com.sybase.jdbc3.jdbc.SybDriver
   	JdbcUrl jdbc:sybase:Tds:localhost:2638?ServiceName=projecttracker
