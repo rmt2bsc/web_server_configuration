@@ -128,6 +128,78 @@
 		</Destination>
  </DestinationMappings>
  <ServiceRegistry>
+     <Service>
+        <Name>Create or modify contact lookup groups</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>addressbook</application>
+        <module>lookup</module>
+        <transaction>UPDATE_LOOKUP_GROUP</transaction>
+        <destination>JMS_ADDRESSBOOK_QUEUE</destination>
+        <description>Operaton for creating new or modifying existing contact lookup groups.  To create
+            an lookup group, the group_id must not exist in the request or it must be set to zero.
+            To update a lookup group, the group_id must be included in the request and its value
+            must be greater than zero.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query contact lookup group</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>addressbook</application>
+        <module>lookup</module>
+        <transaction>GET_LOOKUP_GROUP</transaction>
+        <destination>JMS_ADDRESSBOOK_QUEUE</destination>
+        <description>Operaton for fetching contact lookup groups.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Delete contact lookup group</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>addressbook</application>
+        <module>lookup</module>
+        <transaction>DELETE_LOOKUP_GROUP</transaction>
+        <destination>JMS_ADDRESSBOOK_QUEUE</destination>
+        <description>Operaton for deleting contact lookup group.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Create or modify contact lookup codes</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>addressbook</application>
+        <module>lookup</module>
+        <transaction>UPDATE_LOOKUP_CODE</transaction>
+        <destination>JMS_ADDRESSBOOK_QUEUE</destination>
+        <description>Operaton for creating new or modifying existing contact lookup codes.  To create
+            an lookup code, the code_id must not exist in the request or it must be set to zero.
+            To update a lookup code, the code_id must be included in the request and its value
+            must be greater than zero.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query contact lookup code</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>addressbook</application>
+        <module>lookup</module>
+        <transaction>GET_LOOKUP_CODE</transaction>
+        <destination>JMS_ADDRESSBOOK_QUEUE</destination>
+        <description>Operaton for fetching contact lookup codes.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Delete contact lookup code</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>addressbook</application>
+        <module>lookup</module>
+        <transaction>DELETE_LOOKUP_CODE</transaction>
+        <destination>JMS_ADDRESSBOOK_QUEUE</destination>
+        <description>Operaton for deleting contact lookup code.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
     <Service>
         <Name>Query common, personal, or business contacts</Name>
         <ServiceType>JMS</ServiceType>
