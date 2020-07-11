@@ -128,38 +128,407 @@
 		</Destination>
  </DestinationMappings>
  <ServiceRegistry>
-		<Service>
-			<Name>User Login</Name>
-			<ServiceType>JMS</ServiceType>
-			<application>authentication</application>
-			<module>users</module>
-			<transaction>login</transaction>
-			<destination>JMS_ACCOUNTING_QUEUE</destination>
-			<description>Functions to log user into system</description>
-			<secure>false</secure>
-			<host></host>
-		</Service>
-		<Service>
-			<Name>Get Business Records</Name>
-			<ServiceType>HTTP</ServiceType>
-			<application>addressbook</application>
-			<module>businesscontacts</module>
-			<transaction>getBusiness</transaction>
-			<destination>HTTP_CONTACT</destination>
-			<description>Retrieves Business Contact data by long name, tax id, and/or main phone number</description>
-			<secure>true</secure>
-			<host></host>
-		</Service>
-		<Service>
-			<Name>Get Business Records</Name>
-			<ServiceType>SOAP</ServiceType>
-			<application>multimedia</application>
-			<module>content</module>
-			<transaction>RQ_content_search</transaction>
-			<destination>multimedia/unsecureRequestProcessor/Services</destination>
-			<description>Fetches images of documents from the MIME database</description>
-			<secure>false</secure>
-			<host>RMTDALDB01:8080</host>
-		</Service>
-	</ServiceRegistry>	
+    <Service>
+        <Name>Query creditor profile</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>GET_CREDITOR</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for fetching creditor data</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query creditor transactions history</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>GET_CREDITOR_TRAN_HIST</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for fetching creditor transaction history</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Create or modify a creditor profile</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>UPDATE_CREDITOR</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for creating a new or updating an existing creditor profile. To
+            create a cutomer profile, the creditor_id must not exist in the request or it must be
+            set to zero. To update a creditor profile, the creditor_id must be included in the
+            request and its value must be greater than zero.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Delete creditor profile</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>DELETE_CREDITOR</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for deleting a creditor profile</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query creditor type data</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>GET_CREDITOR_TYPE</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for fetching creditor type data. Currently, there ar two types:
+            Creditor and Vendor.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query Customer profile</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>GET_CUSTOMER</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for fetching customer data</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query Customer transactions history</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>GET_CUSTOMER_TRAN_HIST</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for fetching customer transaction history</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Create or modify a Customer profile</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>UPDATE_CUSTOMER</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for creating a new or updating an existing customer profile. To
+            create a cutomer profile, the customer_id must not exist in the request or it must be
+            set to zero. To update a customer profile, the customer_id must be included in the
+            request and its value must be greater than zero.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Delete Customer profile</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>DELETE_CUSTOMER</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for deleting a customer profile</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query transaction lookup groups</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>GET_TRANS_GROUP</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for fetching information pertaining to transaction group lookup
+            data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query transaction lookup codes</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>GET_TRANS_CODE</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for fetching information pertaining to transaction code lookup
+            data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query common transaction</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>GET_TRANSACTION</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for fetching common transaction information. The information fetched
+            can be in full detail form or summary form. To fetch full details, set target_level
+            criteria item to FULL. Otherwise, set to HEADER.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Create a common transaction</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>CREATE_TRANSACTION</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for creating a common transaction</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Reverse a common transaction</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>REVERSE_TRANSACTION</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for reverseing an existing common transaction</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query consolidated common transactions</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>GET_GENERIC_TRANSACTION</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for querying common transactions of differing types such as common,
+            cash disbursements, cash receipts, creditor purchases, sales order invoices
+            etc</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query cash disbursement transaction</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>GET_CASH_DISBURSEMENT</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for fetching cash disbursement transactions. The information fetched
+            can be in full detail form or summary form. To fetch full details, set target_level
+            criteria item to FULL. Otherwise, set to HEADER.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Create or reverse a cash disbursement transaction</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>CREATE_CASH_DISBURSEMENT</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for creating a new or reversing an existing cash disbursement
+            transaction. To create a cash disbursement, the xact_id must not exist in the request or
+            it must be set to zero. To reverse a cash disbursement, the xact_id must be included in
+            the request and its value must be greater than zero.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query Cash Receipt</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>GET_CASH_RECEIPT</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for fetching a cash receipt transaction</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Create or Reverse a Cash Receipt</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>CREATE_CASH_RECEIPT</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operatoin for creating a Cash Receipt transaction or reversing a cash receipt
+            transaction. To create a cash receipt, the xact_id must not exist in the request or it
+            must be set to zero. To reverse a cash receipt, the xact_id must be included in the
+            request and its value must be greater than zero.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query creditor purchase transaction</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>GET_CREDITOR_PURCHASES</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for fetching a credit expense transaction.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Create a new or reverse an existing purchase transaction</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>CREATE_CREDITOR_PURCHASES</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operatoin for creating a new creditor expense purchase transaction. To create a
+            creditor expense, the xact_id must not exist in the request or it must be set to zero.
+            To reverse an existing creditor expense purchase transaction, the xact_id must be
+            included in the request and its value must be greater than zero</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query sales order</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>GET_SALES_ORDER</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation queries sales order</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query extended sales order</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>GET_CUSTOMER_SALES_ORDER</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation queries sales order containing detailed data including service
+            provider, customer, sales order, sales invoice, and sales order item data. Minimum input
+            requirements are sales order id, customer id, and xact id.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Create sales order</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>CREATE_SALES_ORDER</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation creates a sales order</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Create and invoice sales order</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>CREATE_SALES_ORDER_AND_INVOICE</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation creates and invoices a sales order</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Create, invoice, and apply payment to sales order</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>CREATE_SALES_ORDER_AND_INVOICE_AND_CASHRECEIPT</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation creates, invoices, and applies a payment to a sales
+            order</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Modify a sales order</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>UPDATE_SALES_ORDER</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation applies updates to an existing sales order</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Modify and invoice a sales order</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>UPDATE_SALES_ORDER_AND_INVOICE</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation applies updates to an existing sales order</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Modify, invoice, and apply payment to a sales order</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>UPDATE_SALES_ORDER_AND_INVOICE_AND_CASHRECEIPT</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation applies updates to an existing sales order</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Delete a sales order</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>DELETE_SALES_ORDER</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation deletes an existing sales order from the system</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Refund sales order</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>REFUND_SALES_ORDER</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation that refunds a sales order that has payments applied.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Cancel sales order</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>CANCEL_SALES_ORDER</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation that cancels a sales order.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Close sales order and payment</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>CLOSE_SALES_ORDER_WITH_PAYMENT</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Closes a sales order along with applying a final payment.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Print sales order</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>PRINT_SALES_ORDER</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Produces a sales order in PDF format which is suiteable for
+            printing.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+</ServiceRegistry>
 </AppServerConfig>
