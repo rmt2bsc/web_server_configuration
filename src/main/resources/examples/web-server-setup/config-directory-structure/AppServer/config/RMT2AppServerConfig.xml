@@ -129,6 +129,63 @@
  </DestinationMappings>
  <ServiceRegistry>
      <Service>
+        <Name>Query zip code</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>addressbook</application>
+        <module>postal</module>
+        <transaction>GET_ZIPCODE</transaction>
+        <destination>JMS_ADDRESSBOOK_QUEUE</destination>
+        <description>Operaton for fetching zip code information. The extent of the output can be
+            controlled via teh result_format criteria element. If set to "FULL", then detailed
+            output is created. If set to "SHORT", then summary output is created.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query time zone</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>addressbook</application>
+        <module>postal</module>
+        <transaction>GET_TIMEZONE</transaction>
+        <destination>JMS_ADDRESSBOOK_QUEUE</destination>
+        <description>Operaton for fetching time zone information.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query state/province</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>addressbook</application>
+        <module>postal</module>
+        <transaction>GET_REGION</transaction>
+        <destination>JMS_ADDRESSBOOK_QUEUE</destination>
+        <description>Operaton for fetching state/province information.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query Country information</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>addressbook</application>
+        <module>postal</module>
+        <transaction>GET_COUNTRY</transaction>
+        <destination>JMS_ADDRESSBOOK_QUEUE</destination>
+        <description>Operaton for fetching country information.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query IP Address information</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>addressbook</application>
+        <module>postal</module>
+        <transaction>GET_IP_INFO</transaction>
+        <destination>JMS_ADDRESSBOOK_QUEUE</destination>
+        <description>Operaton for fetching IP address information.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+     <Service>
         <Name>Create or modify contact lookup groups</Name>
         <ServiceType>JMS</ServiceType>
         <application>addressbook</application>
