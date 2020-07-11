@@ -107,8 +107,8 @@
 	</MessagingSystemsInfo>
 	<DestinationMappings>
 		<<Destination>
-			<Rmt2Name>JMS_CONTACT_QUEUE</Rmt2Name>
-			<JndiName>rmt2.queue.contacts</JndiName>
+			<Rmt2Name>JMS_ADDRESSBOOK_QUEUE</Rmt2Name>
+			<JndiName>rmt2.queue.addressbook</JndiName>
 			<ContainSuffix>false</ContainSuffix>
 		</Destination>
 		<Destination>
