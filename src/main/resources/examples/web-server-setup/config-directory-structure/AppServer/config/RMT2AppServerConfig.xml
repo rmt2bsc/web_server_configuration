@@ -129,6 +129,78 @@
  </DestinationMappings>
  <ServiceRegistry>
      <Service>
+        <Name>Create or modify employee profile</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>employee</module>
+        <transaction>UPDATE_EMPLOYEE</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for updating employee profile information. To create an employee
+            profile, the employee_id must not exist in the request or it must be set to zero. To
+            update a employee profile, the employee_id must be included in the request and its value
+            must be greater than zero.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query employee profile</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>employee</module>
+        <transaction>GET_EMPLOYEE</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for fetching employee profile information.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query employee type profile</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>employee</module>
+        <transaction>GET_EMPLOYEE_TYPE</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for fetching employee type profile information.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query employee title profile</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>employee</module>
+        <transaction>GET_EMPLOYEE_TITLE</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for fetching employee title profile information.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query employee project</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>employee</module>
+        <transaction>GET_EMPLOYEE_PROJECT</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for fetching employee project information.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Create or modify employee project profile</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>employee</module>
+        <transaction>UPDATE_EMPLOYEE_PROJECT</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for updating employee project profile information. To create an
+            employee project profile, the employee_project_id must not exist in the request or it
+            must be set to zero. To update a employee project profile, the employee_project_id must
+            be included in the request and its value must be greater than zero.</description>
+        <secure>false</secure>
+        <host/>
+     </Service>
+     <Service>
         <Name>Query project client data</Name>
         <ServiceType>JMS</ServiceType>
         <application>projecttracker</application>
