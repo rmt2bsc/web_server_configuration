@@ -157,7 +157,7 @@
         <module>admin</module>
         <transaction>UPDATE_PROJECT</transaction>
         <destination>JMS_PROJECTTRACKER_QUEUE</destination>
-        <description>Operaton for deleting project profile information. To create an project
+        <description>Operaton for creating new or modfiying existing project profile information. To create an project
             profile, the project_id must not exist in the request or it must be set to zero. To
             update a project profile, the project_id must be included in the request and its value
             must be greater than zero.</description>
