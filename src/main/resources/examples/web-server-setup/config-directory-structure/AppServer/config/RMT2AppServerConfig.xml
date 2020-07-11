@@ -129,6 +129,108 @@
  </DestinationMappings>
  <ServiceRegistry>
      <Service>
+        <Name>Query timesheet</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>timesheet</module>
+        <transaction>GET_TIMESHEET</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for fetching timesheet.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Create or modify timesheet</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>timesheet</module>
+        <transaction>UPDATE_TIMESHEET</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for updating timesheet profile information. To create an timesheet
+            profile, the timesheet_id must not exist in the request or it must be set to zero. To
+            update a timesheet profile, the timesheet_id must be included in the request and its
+            value must be greater than zero.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Delete timesheet</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>timesheet</module>
+        <transaction>DELETE_TIMESHEET</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for deleting timesheets.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Submit timesheet</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>timesheet</module>
+        <transaction>SUBMIT_TIMESHEET</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for submitting timesheet.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Approve timesheet</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>timesheet</module>
+        <transaction>APPROVE_TIMESHEET</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for approving timesheet.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Decline timesheet</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>timesheet</module>
+        <transaction>DECLINE_TIMESHEET</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for declining timesheet.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Invoice timesheet</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>timesheet</module>
+        <transaction>INVOICE_TIMESHEET</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for invoicing timesheets.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Print timesheet details</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>timesheet</module>
+        <transaction>PRINT_TIMESHEET_WORKLOG</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for printing timesheet details.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Print timesheet summary</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>timesheet</module>
+        <transaction>PRINT_TIMESHEET_SUMMARY</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for printing timesheet summary.</description>
+        <secure>false</secure>
+        <host/>
+     </Service>
+     <Service>
         <Name>Create or modify employee profile</Name>
         <ServiceType>JMS</ServiceType>
         <application>projecttracker</application>
