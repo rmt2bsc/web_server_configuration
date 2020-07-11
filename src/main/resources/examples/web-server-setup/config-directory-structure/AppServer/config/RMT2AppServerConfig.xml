@@ -129,6 +129,89 @@
  </DestinationMappings>
  <ServiceRegistry>
      <Service>
+        <Name>Query project client data</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>admin</module>
+        <transaction>GET_CLIENT</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for fetching project client information.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query project profile</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>admin</module>
+        <transaction>GET_PROJECT</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for fetching project profile information.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Create or modify project profile</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>admin</module>
+        <transaction>UPDATE_PROJECT</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for deleting project profile information. To create an project
+            profile, the project_id must not exist in the request or it must be set to zero. To
+            update a project profile, the project_id must be included in the request and its value
+            must be greater than zero.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Delete project profile</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>admin</module>
+        <transaction>DELETE_PROJECT</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for deleting project profile information.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query task profile</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>admin</module>
+        <transaction>GET_TASK</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for fetching task profile information.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Create or modify task profile</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>admin</module>
+        <transaction>UPDATE_TASK</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for creating a new or modifying an existing task profile. </description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Delete task profile</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>admin</module>
+        <transaction>DELETE_TASK</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for deleting task profile information. To create an task profile, the
+            task_id must not exist in the request or it must be set to zero. To update a task
+            profile, the task_id must be included in the request and its value must be greater than
+            zero.</description>
+        <secure>false</secure>
+        <host/>
+     </Service>
+     <Service>
         <Name>Query zip code</Name>
         <ServiceType>JMS</ServiceType>
         <application>addressbook</application>
