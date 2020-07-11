@@ -132,7 +132,7 @@
         <Name>Query creditor profile</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
-        <module>transaction</module>
+        <module>subsidiary</module>
         <transaction>GET_CREDITOR</transaction>
         <destination>JMS_ACCOUNTING_QUEUE</destination>
         <description>Operation for fetching creditor data</description>
@@ -143,7 +143,7 @@
         <Name>Query creditor transactions history</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
-        <module>transaction</module>
+        <module>subsidiary</module>
         <transaction>GET_CREDITOR_TRAN_HIST</transaction>
         <destination>JMS_ACCOUNTING_QUEUE</destination>
         <description>Operation for fetching creditor transaction history</description>
@@ -154,7 +154,7 @@
         <Name>Create or modify a creditor profile</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
-        <module>transaction</module>
+        <module>subsidiary</module>
         <transaction>UPDATE_CREDITOR</transaction>
         <destination>JMS_ACCOUNTING_QUEUE</destination>
         <description>Operation for creating a new or updating an existing creditor profile. To
@@ -168,7 +168,7 @@
         <Name>Delete creditor profile</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
-        <module>transaction</module>
+        <module>subsidiary</module>
         <transaction>DELETE_CREDITOR</transaction>
         <destination>JMS_ACCOUNTING_QUEUE</destination>
         <description>Operation for deleting a creditor profile</description>
@@ -179,7 +179,7 @@
         <Name>Query creditor type data</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
-        <module>transaction</module>
+        <module>subsidiary</module>
         <transaction>GET_CREDITOR_TYPE</transaction>
         <destination>JMS_ACCOUNTING_QUEUE</destination>
         <description>Operation for fetching creditor type data. Currently, there ar two types:
@@ -191,7 +191,7 @@
         <Name>Query Customer profile</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
-        <module>transaction</module>
+        <module>subsidiary</module>
         <transaction>GET_CUSTOMER</transaction>
         <destination>JMS_ACCOUNTING_QUEUE</destination>
         <description>Operation for fetching customer data</description>
@@ -202,7 +202,7 @@
         <Name>Query Customer transactions history</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
-        <module>transaction</module>
+        <module>subsidiary</module>
         <transaction>GET_CUSTOMER_TRAN_HIST</transaction>
         <destination>JMS_ACCOUNTING_QUEUE</destination>
         <description>Operation for fetching customer transaction history</description>
@@ -213,7 +213,7 @@
         <Name>Create or modify a Customer profile</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
-        <module>transaction</module>
+        <module>subsidiary</module>
         <transaction>UPDATE_CUSTOMER</transaction>
         <destination>JMS_ACCOUNTING_QUEUE</destination>
         <description>Operation for creating a new or updating an existing customer profile. To
@@ -227,7 +227,7 @@
         <Name>Delete Customer profile</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
-        <module>transaction</module>
+        <module>subsidiary</module>
         <transaction>DELETE_CUSTOMER</transaction>
         <destination>JMS_ACCOUNTING_QUEUE</destination>
         <description>Operation for deleting a customer profile</description>
