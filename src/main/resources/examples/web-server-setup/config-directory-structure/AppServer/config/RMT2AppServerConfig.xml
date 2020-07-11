@@ -129,6 +129,39 @@
  </DestinationMappings>
  <ServiceRegistry>
     <Service>
+        <Name>Query GL Accounts</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>generalledger</module>
+        <transaction>GET_GL_ACCOUNT</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operaton for fetching one or more GL Accounts.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query GL Account Types</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>generalledger</module>
+        <transaction>GET_GL_ACCOUNT_TYPE</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operaton for fetching one or more GL Account types.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Query GL Account Category</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>generalledger</module>
+        <transaction>GET_GL_ACCOUNT_CATG</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operaton for fetching one or more GL Account categories.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
         <Name>Query inventory items</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
