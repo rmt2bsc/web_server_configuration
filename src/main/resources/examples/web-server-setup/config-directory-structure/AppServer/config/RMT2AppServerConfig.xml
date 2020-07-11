@@ -129,6 +129,43 @@
  </DestinationMappings>
  <ServiceRegistry>
     <Service>
+        <Name>Query common, personal, or business contacts</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>addressbook</application>
+        <module>profile</module>
+        <transaction>GET_CONTACT</transaction>
+        <destination>JMS_ADDRESSBOOK_QUEUE</destination>
+        <description>Operaton for fetching contacts based on the type of criteria used: business
+            criteria, personal criteria, or common criteria.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Create or modify common, personal, or business contacts</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>addressbook</application>
+        <module>profile</module>
+        <transaction>UPDATE_CONTACT</transaction>
+        <destination>JMS_ADDRESSBOOK_QUEUE</destination>
+        <description>Operaton for creating new or modifying existing contact profiles based on the
+            type of profile used: business profile, personal profile, or common
+            profile.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Delete common, personal, or business contacts</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>addressbook</application>
+        <module>profile</module>
+        <transaction>DELETE_CONTACT</transaction>
+        <destination>JMS_ADDRESSBOOK_QUEUE</destination>
+        <description>Operaton for deleting contact profiles based on the type of criteria used:
+            business criteria, personal criteria, or common criteria.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
         <Name>Query GL Accounts</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
