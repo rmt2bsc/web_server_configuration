@@ -1,0 +1,9 @@
+-n RMT2DALSYBSRV01
+C:\data\sybase\accounting.db
+C:\data\sybase\authentication.db
+C:\data\sybase\mime.db
+C:\data\sybase\projecttracker.db
+C:\data\sybase\rmt2.db
+C:\data\sybase\contacts.db
+C:\data\sybase\openjms.db
+C:\data\sybase\framework.db
