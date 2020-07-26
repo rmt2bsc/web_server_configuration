@@ -18,7 +18,7 @@ chmod ugo+rwx $loc/$file
 cd $loc
 
 ################################################################
-# Now target machine is UNIX based, use SCP to copy file.
+# Now that target machine is UNIX based, use SCP to copy file.
 # NOTE:  Used SSH private/public key to prevent having to 
 #        explicitly provide password for target machine when
 #        invoking the SCP command in batch file.
