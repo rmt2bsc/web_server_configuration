@@ -47,11 +47,11 @@
 	   <EmailConfig>
 	       <Authentication>true</Authentication>
 	       <Defaultcontent>text/html</Defaultcontent>
-	       <HostPop3>incoming.verizon.net</HostPop3>
-	       <HostSmtp>outgoing.verizon.net</HostSmtp> 
+	       <HostPop3>pop.gmail.com</HostPop3>
+	       <HostSmtp>smtp.gmail.com</HostSmtp> 
 	       <InternalSmtpDomain>verizon.net</InternalSmtpDomain>
-	       <UserId>rmt2it</UserId> 
-	       <Password>drum7777</Password>
+	       <UserId>rmt2bsc@gmail.com</UserId> 
+	       <Password>610hoover</Password>
 	       <Resourcetype>file</Resourcetype>
 	       <TemplatePath>\\source\\dotcom5\\aviall\\resources\\templates\\</TemplatePath> 
 	   </EmailConfig>
