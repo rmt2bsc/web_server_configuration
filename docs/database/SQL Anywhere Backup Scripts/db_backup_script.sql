@@ -25,4 +25,11 @@ BEGIN
         ATTENDED OFF
         WITH COMMENT 'Full back up of Accounting db file and transaction log performed'
         HISTORY ON;
+    
+        /**
+         * I have not gotten the SMTP functions to work gmail as of yet.
+         */
+    call xp_startsmtp(smtp_sender='royterrell2@gmail.com', smtp_server='smtp.gmail.com', smtp_port=587, smtp_sender_name='Database Admin', smtp_auth_username='rmt2bsc@gmail.com', smtp_auth_password='610hoover');
+    call xp_sendmail(recipient='rmt2bsc@gmail.com', subject='DB Name', "message"='Test email sent from Sybase', content_type='text/html');
+    call xp_stopsmtp();        
 END
