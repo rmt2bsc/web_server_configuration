@@ -1,18 +1,24 @@
 i#!/bin/bash
 
-echo ===== Start database backup...
+logger -p 7 ===== Start database backup...
 
 # Build file name
 days=$(date +%Y_%m_%d_%H%M)
-echo $days
+
+logger -p 7 $days
+
 file="archives_$days.tar.gz"
-echo $file
+
+logger -p 7 $file
+
 loc="/rmt2/db_archives"
 
 # compress all database files into one archive
-echo ===== Archiving and compressing all files in $loc...
+logger -p 7 ===== Archiving and compressing all files in $loc...
+
 tar cvzf $loc/$file $loc/*.*
-echo ===== Compressing $loc/$file is completed
+
+logger -p 7 ===== Compressing $loc/$file is completed 
 
 chmod ugo+rwx $loc/$file
 cd $loc
@@ -23,9 +29,11 @@ cd $loc
 #        explicitly provide password for target machine when
 #        invoking the SCP command in batch file.
 ################################################################
-echo ===== Copying DB archive...
+logger -p 7 ===== Copying DB archive...
+
 scp $file royterrell@rmtdalmedia01:~/Dropbox/MyData/db
-echo ===== DB archive copy completed.
+
+logger -p 7 ===== DB archive copy completed. 
 
 ######################################################################################
 # Disabled FTP logic since we are no longer using a Windows machine as the target
@@ -49,9 +57,11 @@ echo ===== DB archive copy completed.
 #   exit 1
 #fi
 
-echo ===== Deleting DB archive from source...
+logger -p 7 ===== Deleting DB archive from source...
+
 rm /rmt2/db_archives/*.*
-echo ===== Database backup completed!
+
+logger -p 7 ===== Database backup completed!
 
 #  To untar:  tar xvzf <tar file> -C <destinatin path>
 
