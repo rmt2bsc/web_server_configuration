@@ -29,7 +29,7 @@ cd $loc
 #        explicitly provide password for target machine when
 #        invoking the SCP command in batch file.
 ################################################################
-logger -p 7 ===== Copying DB archive...
+logger -p 7 ===== Copying DB archive, $file...
 
 scp $file royterrell@rmtdalmedia01:~/Dropbox/MyData/db
 
@@ -59,6 +59,7 @@ logger -p 7 ===== DB archive copy completed.
 
 logger -p 7 ===== Deleting DB archive from source...
 
+mv /rmt2/db_archives/$file /rmt2/db_archives/old
 rm /rmt2/db_archives/*.*
 
 logger -p 7 ===== Database backup completed!
