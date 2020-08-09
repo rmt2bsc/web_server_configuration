@@ -31,7 +31,7 @@ cd $loc
 ################################################################
 logger -p 7 ===== Copying DB archive, $file...
 
-scp $file royterrell@rmtdalmedia01:~/Dropbox/MyData/db
+scp $loc/$file royterrell@rmtdalmedia01:~/Dropbox/MyData/db
 
 logger -p 7 ===== DB archive copy completed. 
 
