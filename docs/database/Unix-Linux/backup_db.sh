@@ -1,4 +1,4 @@
-i#!/bin/bash
+#!/bin/bash
 
 logger -p 7 ===== Start database backup...
 
