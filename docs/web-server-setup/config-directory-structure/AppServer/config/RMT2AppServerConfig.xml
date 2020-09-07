@@ -92,18 +92,6 @@
 		    <MaxConnectAttemps>30</MaxConnectAttemps>
 		    <ConnectAttemptInterval>30000</ConnectAttemptInterval>
 		</System>
-		<System>
-		    <Name>For Example Only.  Delete before use</Name>
-		    <UseJndi>true</UseJndi>
-		    <UseAuthentication>false</UseAuthentication>
-		    <InitialContextFactory>org.apache.activemq.jndi.ActiveMQInitialContextFactory</InitialContextFactory>
-		    <ConnectionFactory>org.apache.activemq.ActiveMQConnectionFactory;</ConnectionFactory>
-		    <ProviderUrl>tcp://localhost:61616</ProviderUrl>
-		    <UserId>admin</UserId>
-		    <Password>admin</Password>
-		    <MaxConnectAttemps>30</MaxConnectAttemps>
-		    <ConnectAttemptInterval>30000</ConnectAttemptInterval>
-		</System>
 	</MessagingSystemsInfo>
 	<DestinationMappings>
 		<Destination>
