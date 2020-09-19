@@ -21,7 +21,7 @@ tar cvzf $loc/$file $loc/*.*
 logger -p 7 ===== Compressing $loc/$file is completed 
 
 chmod ugo+rwx $loc/$file
-cd $loc
+# cd $loc
 
 ################################################################
 # Now that target machine is UNIX based, use SCP to copy file.
@@ -32,6 +32,10 @@ cd $loc
 logger -p 7 ===== Copying DB archive, $file...
 
 scp $loc/$file royterrell@rmtdalmedia01:~/Dropbox/MyData/db
+
+# Delay script to allow the copy and syncyed to Dropbox process to complete.
+# This prevents the copying of an empty file.
+sleep 5m
 
 logger -p 7 ===== DB archive copy completed. 
 
