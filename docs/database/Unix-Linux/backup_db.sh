@@ -31,11 +31,11 @@ chmod ugo+rwx $loc/$file
 ################################################################
 logger -p 7 ===== Copying DB archive, $file...
 
-scp $loc/$file royterrell@rmtdalmedia01:~/Dropbox/MyData/db
+scp $loc/$file royterrell@rmtdalmedia01:~/Data
 
 # Delay script to allow the copy and syncyed to Dropbox process to complete.
 # This prevents the copying of an empty file.
-sleep 5m
+#sleep 5m
 
 logger -p 7 ===== DB archive copy completed. 
 
