@@ -31,35 +31,39 @@ chmod ugo+rwx $loc/$file
 ################################################################
 logger -p 7 ===== Copying DB archive, $file...
 
-scp $loc/$file royterrell@rmtdalmedia01:~/Data
+# scp $loc/$file royterrell@rmtdalmedia01:~/Data
 
 # Delay script to allow the copy and syncyed to Dropbox process to complete.
 # This prevents the copying of an empty file.
 #sleep 5m
 
-logger -p 7 ===== DB archive copy completed. 
+
 
 ######################################################################################
 # Disabled FTP logic since we are no longer using a Windows machine as the target
 ######################################################################################
 # ftp file to another server
-#HOST=192.168.0.5   #rmtdalmedia01
-#USER=admin02
-#PASSWD=610hoover
-#echo FTP $loc/$file to $HOST
+HOST=192.168.0.5   #rmtdalmedia01
+USER=royterrell
+PASSWD=hoover
+echo FTP $loc/$file to $HOST
 
-#ftp -inv $HOST <<EOF
-#user $USER $PASSWD
-#prompt
-#binary
-#put $file
-#quit
-#EOF
-#
-#if [ $? -ne 0 ]
-#   # Do error handleing here...
-#   exit 1
-#fi
+ftp -inv $HOST <<EOF
+user $USER $PASSWD
+prompt
+binary
+cd Dropbox/MyData/db
+put $loc/$file $file
+quit
+EOF
+
+if [ $? -ne 0 ]
+then
+   # Do error handling here...
+   exit 1
+fi
+
+logger -p 7 ===== DB archive copy completed. 
 
 logger -p 7 ===== Deleting DB archive from source...
 
