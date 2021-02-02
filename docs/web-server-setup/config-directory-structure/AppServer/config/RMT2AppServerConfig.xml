@@ -110,12 +110,231 @@
 			<ContainSuffix>false</ContainSuffix>
 		</Destination>
 		<Destination>
+			<Rmt2Name>JMS_MEDIA_QUEUE</Rmt2Name>
+			<JndiName>rmt2.queue.media</JndiName>
+			<ContainSuffix>false</ContainSuffix>
+		</Destination>
+		<Destination>
+			<Rmt2Name>JMS_MEDIA_TOPIC</Rmt2Name>
+			<JndiName>rmt2.topic.media</JndiName>
+			<ContainSuffix>false</ContainSuffix>
+		</Destination>
+		<Destination>
 			<Rmt2Name>HTTP_CONTACT</Rmt2Name>
 			<JndiName>contacts/unsecureRequestProcessor/Services</JndiName>
 			<ContainSuffix>false</ContainSuffix>
 		</Destination>
  </DestinationMappings>
  <ServiceRegistry>
+      <Service>
+				<Name>Attach media content to application</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>attach</module>
+				<transaction>LINK_CONTENT_TO_APPLICATION</transaction>
+				<destination>JMS_MEDIA_TOPIC</destination>
+				<description>Operaton for linking or attaching media content to the home application</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+      <Service>
+				<Name>Query genre</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>lookup</module>
+				<transaction>GET_GENRE</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for fetching genres</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+			<Service>
+				<Name>Query media type</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>lookup</module>
+				<transaction>GET_MEDIA_TYPE</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for fetching media types</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+			<Service>
+				<Name>Load audio metadata</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>batch</module>
+				<transaction>BATCH_AUDIO_METADATA_IMPORT</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for loading audio metadata into the system in batch mode</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+			<Service>
+				<Name>Load video metadata</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>batch</module>
+				<transaction>BATCH_VIDEO_METADATA_IMPORT</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for loading video metadata into the system in batch mode</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+			<Service>
+				<Name>Query artists</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>maint</module>
+				<transaction>GET_ARTIST</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for fetching artist</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+			<Service>
+				<Name>Update artists</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>maint</module>
+				<transaction>UPDATE_ARTIST</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for updating artist</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+			<Service>
+				<Name>Delete artists</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>maint</module>
+				<transaction>DELETE_ARTIST</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for deleting artist</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+			<Service>
+				<Name>Query artist projects</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>maint</module>
+				<transaction>GET_ARTIST_PROJECT</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for fetching artist's project</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+			<Service>
+				<Name>update artist projects</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>maint</module>
+				<transaction>UPDATE_ARTIST_PROJECT</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for updating artist's project</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+			<Service>
+				<Name>Query tracks</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>maint</module>
+				<transaction>GET_TRACK</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for fetching tracks</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+			<Service>
+				<Name>Updating tracks</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>maint</module>
+				<transaction>UPDATE_TRACK</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for updating tracks</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+			<Service>
+				<Name>Consolidated media search</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>maint</module>
+				<transaction>SEARCH_MEDIA</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for fecthing media of all types</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+			<Service>
+				<Name>Manual media upload</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>maint</module>
+				<transaction>MANUAL_UPLOAD_CONTENT</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for manually uploading media into system and attaching to home application</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+			<Service>
+				<Name>Fetch media content</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>maint</module>
+				<transaction>GET_CONTENT</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for fetching media content</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+			<Service>
+				<Name>Delete media content</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>maint</module>
+				<transaction>DELETE_CONTENT</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for deleting media content</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+			<Service>
+				<Name>Start media file listener</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>listener</module>
+				<transaction>START_MEDIA_FILE_LISTENER</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for starting the medi file listener</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+			<Service>
+				<Name>Stop media file listener</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>listener</module>
+				<transaction>STOP_MEDIA_FILE_LISTENER</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for stopping the medi file listener</description>
+				<secure>false</secure>
+				<host/>
+			</Service>
+			<Service>
+				<Name>Media file listener Health</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>listener</module>
+				<transaction>HEALTH_CHECK_MEDIA_FILE_LISTENER</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for checking the health of the medi file listener</description>
+				<secure>false</secure>
+				<host/>
+		 </Service>
      <Service>
         <Name>Query timesheet</Name>
         <ServiceType>JMS</ServiceType>
