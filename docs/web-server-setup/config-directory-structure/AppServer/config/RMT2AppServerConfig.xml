@@ -120,6 +120,11 @@
 			<ContainSuffix>false</ContainSuffix>
 		</Destination>
 		<Destination>
+			<Rmt2Name>JMS_SECRITY_QUEUE</Rmt2Name>
+			<JndiName>rmt2.queue.authentication</JndiName>
+			<ContainSuffix>false</ContainSuffix>
+		</Destination>
+		<Destination>
 			<Rmt2Name>HTTP_CONTACT</Rmt2Name>
 			<JndiName>contacts/unsecureRequestProcessor/Services</JndiName>
 			<ContainSuffix>false</ContainSuffix>
@@ -1386,6 +1391,336 @@
         <destination>JMS_ACCOUNTING_QUEUE</destination>
         <description>Produces a sales order in PDF format which is suiteable for
             printing.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Updates Application</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>UPDATE_APPLICATION</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Apply changes to the Application configuration.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Fetch Application</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>GET_APPLICATION</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Retrieve application configuration data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Delete Application</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>DELETE_APPLICATION</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Remove application configuration data from the system.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Update Role</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>UPDATE_ROLE</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Update role configuration data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Fetch Role</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>GET_ROLE</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Retrieve role configuration data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Delete Role</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>DELETE_ROLE</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Reomve role configuration data from the system.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Update Resource Type</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>UPDATE_RESOURCE_TYPE</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Update resource type configuration data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Fetch Resource Type</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>GET_RESOURCE_TYPE</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Retrieve resource type configuration data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Delete Resource Type</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>DELETE_RESOURCE_TYPE</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Reomve resource type configuration data from the system.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Update Resource SubType</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>UPDATE_RESOURCE_SUB_TYPE</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Update resource subtype configuration data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Fetch Resource SubType</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>GET_RESOURCE_SUB_TYPE</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Retrieve resource subtype configuration data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Delete Resource SubType</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>DELETE_RESOURCE_SUB_TYPE</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Reomve resource subtype configuration data from the system.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Update Resource</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>UPDATE_RESOURCE</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Update resource configuration data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Fetch Resource</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>GET_RESOURCE</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Retrieve resource configuration data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Delete Resource</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>DELETE_RESOURCE</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Reomve resource configuration data from the system.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Update User Group</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>UPDATE_USER_GROUP</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Update user group configuration data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Fetch User Group</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>GET_USER_GROUP</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Retrieve user group configuration data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Delete User Group</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>DELETE_USER_GROUP</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Reomve user group configuration data from the system.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Update App Role</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>UPDATE_APP_ROLE</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Update application role configuration data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Fetch App Role</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>GET_APP_ROLE</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Retrieve application role configuration data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Delete App Role</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>DELETE_APP_ROLE</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Reomve application role configuration data from the system.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Update User</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>UPDATE_USER</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Update user configuration data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Fetch User</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>GET_USER</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Retrieve user configuration data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Delete User</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>DELETE_USER</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Reomve user configuration data from the system.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Maintatin User Application Role</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>MAINTAIN_USER_APPROLE</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Maintains user application role configuration data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Fetch User Permissions</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>GET_USER_PERMISSIONS</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Retrieves user permissions configuration data.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Change Password</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>admin</module>
+        <transaction>CHANGE_PASSWORD</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Change the user's password.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>User Login</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>auth</module>
+        <transaction>LOGIN_USER</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Authenticates a user.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>User Logout</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>auth</module>
+        <transaction>LOGOUT_USER</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Logs a user out of the system.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>SSO User Login</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>authentication</application>
+        <module>auth</module>
+        <transaction>SSO_LOGIN_USER</transaction>
+        <destination>JMS_SECRITY_QUEUE</destination>
+        <description>Uses Single Sign On (SSO) method to log user into system.</description>
         <secure>false</secure>
         <host/>
     </Service>
