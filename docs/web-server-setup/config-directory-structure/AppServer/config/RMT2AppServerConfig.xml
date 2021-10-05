@@ -797,6 +797,28 @@
         <host/>
     </Service>
     <Service>
+        <Name>Update GL Account Category</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>generalledger</module>
+        <transaction>UPDATE_GL_ACCOUNT_CATG</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operaton for creating a new or modifying an exisint GL Account category.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+	   <Name>Delete GL Account Category</Name>
+	   <ServiceType>JMS</ServiceType>
+	   <application>accounting</application>
+	   <module>generalledger</module>
+	   <transaction>DELETE_GL_ACCOUNT_CATG</transaction>
+	   <destination>JMS_ACCOUNTING_QUEUE</destination>
+	   <description>Operaton for deleting an exisint GL Account category.</description>
+	   <secure>false</secure>
+	   <host/>
+     </Service>
+    <Service>
         <Name>Query inventory items</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
