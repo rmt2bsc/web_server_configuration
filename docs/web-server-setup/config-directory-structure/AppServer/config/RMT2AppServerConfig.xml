@@ -775,6 +775,29 @@
         <host/>
     </Service>
     <Service>
+			<Name>Update GL Accounts</Name>
+			<ServiceType>JMS</ServiceType>
+			<application>accounting</application>
+			<module>generalledger</module>
+			<transaction>UPDATE_GL_ACCOUNT</transaction>
+			<destination>JMS_ACCOUNTING_QUEUE</destination>
+			<description>Operaton for creating a new or modifying an existing more GL Account.
+			</description>
+			<secure>false</secure>
+			<host />
+		</Service>
+		<Service>
+			<Name>Delete GL Accounts</Name>
+			<ServiceType>JMS</ServiceType>
+			<application>accounting</application>
+			<module>generalledger</module>
+			<transaction>DELETE_GL_ACCOUNT</transaction>
+			<destination>JMS_ACCOUNTING_QUEUE</destination>
+			<description>Operaton for deleting GL Account.</description>
+			<secure>false</secure>
+			<host />
+		</Service>
+    <Service>
         <Name>Query GL Account Types</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
