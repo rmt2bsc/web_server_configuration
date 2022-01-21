@@ -1203,6 +1203,17 @@
         <host/>
     </Service>
     <Service>
+        <Name>Delete a common transaction</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>DELETE_TRANSACTION</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for deleting an existing common transaction and its respective line items</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
         <Name>Query consolidated common transactions</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
