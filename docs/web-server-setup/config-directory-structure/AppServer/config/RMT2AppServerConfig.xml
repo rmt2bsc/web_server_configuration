@@ -1318,14 +1318,26 @@
         <host/>
     </Service>
     <Service>
-        <Name>Create a new or reverse an existing purchase transaction</Name>
+        <Name>Create a new purchase transaction</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
         <module>transaction</module>
         <transaction>CREATE_CREDITOR_PURCHASES</transaction>
         <destination>JMS_ACCOUNTING_QUEUE</destination>
-        <description>Operatoin for creating a new creditor expense purchase transaction. To create a
+        <description>Operation for creating a new creditor expense purchase transaction. To create a
             creditor expense, the xact_id must not exist in the request or it must be set to zero.
+         </description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Reverse an existing purchase transaction</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>REVERSE_CREDITOR_PURCHASES</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for reversing a creditor expense purchase transaction. 
             To reverse an existing creditor expense purchase transaction, the xact_id must be
             included in the request and its value must be greater than zero</description>
         <secure>false</secure>
