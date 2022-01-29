@@ -1203,6 +1203,17 @@
         <host/>
     </Service>
     <Service>
+        <Name>Delete a common transaction</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>DELETE_TRANSACTION</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for deleting an existing common transaction and its respective line items</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
         <Name>Query consolidated common transactions</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
@@ -1243,6 +1254,34 @@
         <host/>
     </Service>
     <Service>
+        <Name>Create or reverse a creditor cash disbursement transaction</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>CREATE_CASH_DISBURSEMENT_CREDITOR</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for creating a new or reversing an existing creditor cash disbursement
+            transaction. To create a cash disbursement, the xact_id must not exist in the request or
+            it must be set to zero. To reverse a cash disbursement, the xact_id must be included in
+            the request and its value must be greater than zero.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+    	    <Name>Reverse a creditor cash disbursement transaction</Name>
+    	    <ServiceType>JMS</ServiceType>
+    	    <application>accounting</application>
+    	    <module>transaction</module>
+    	    <transaction>REVERSE_CASH_DISBURSEMENT_CREDITOR</transaction>
+    	    <destination>JMS_ACCOUNTING_QUEUE</destination>
+    	    <description>Operation for reversing a an existing creditor cash disbursement
+    		transaction. To create a cash disbursement, the xact_id must not exist in the request or
+    		it must be set to zero. To reverse a cash disbursement, the xact_id must be included in
+    		the request and its value must be greater than zero.</description>
+    	    <secure>false</secure>
+    	    <host/>
+    </Service>
+    <Service>
         <Name>Query Cash Receipt</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
@@ -1254,16 +1293,26 @@
         <host/>
     </Service>
     <Service>
-        <Name>Create or Reverse a Cash Receipt</Name>
+		<Name>Create a Cash Receipt</Name>
+		<ServiceType>JMS</ServiceType>
+		<application>accounting</application>
+		<module>transaction</module>
+		<transaction>CREATE_CASH_RECEIPT</transaction>
+		<destination>JMS_ACCOUNTING_QUEUE</destination>
+		<description>Operation for creating a Cash Receipt transaction. To create a cash receipt, 
+		    the xact_id must not exist in the request or it must be set to zero.</description>
+		<secure>false</secure>
+		<host/>
+    </Service>
+    <Service>
+        <Name>Reverse a Cash Receipt</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
         <module>transaction</module>
-        <transaction>CREATE_CASH_RECEIPT</transaction>
+        <transaction>REVERSE_CASH_RECEIPT</transaction>
         <destination>JMS_ACCOUNTING_QUEUE</destination>
-        <description>Operatoin for creating a Cash Receipt transaction or reversing a cash receipt
-            transaction. To create a cash receipt, the xact_id must not exist in the request or it
-            must be set to zero. To reverse a cash receipt, the xact_id must be included in the
-            request and its value must be greater than zero.</description>
+        <description>Operation for reversing a cash receipt transaction.  To reverse a cash receipt, the 
+            xact_id must be included in the request and its value must be greater than zero.</description>
         <secure>false</secure>
         <host/>
     </Service>
@@ -1279,14 +1328,26 @@
         <host/>
     </Service>
     <Service>
-        <Name>Create a new or reverse an existing purchase transaction</Name>
+        <Name>Create a new purchase transaction</Name>
         <ServiceType>JMS</ServiceType>
         <application>accounting</application>
         <module>transaction</module>
         <transaction>CREATE_CREDITOR_PURCHASES</transaction>
         <destination>JMS_ACCOUNTING_QUEUE</destination>
-        <description>Operatoin for creating a new creditor expense purchase transaction. To create a
+        <description>Operation for creating a new creditor expense purchase transaction. To create a
             creditor expense, the xact_id must not exist in the request or it must be set to zero.
+         </description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
+        <Name>Reverse an existing purchase transaction</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>accounting</application>
+        <module>transaction</module>
+        <transaction>REVERSE_CREDITOR_PURCHASES</transaction>
+        <destination>JMS_ACCOUNTING_QUEUE</destination>
+        <description>Operation for reversing a creditor expense purchase transaction. 
             To reverse an existing creditor expense purchase transaction, the xact_id must be
             included in the request and its value must be greater than zero</description>
         <secure>false</secure>
