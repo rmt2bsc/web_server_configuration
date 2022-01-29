@@ -1,2 +1,1 @@
-/opt/sqlanywhere16/bin64/dbspawn -f dbsrv16 -n rmt2proddb01 -o /rmt2/logs/rmt2proddb01.log -os 10M /rmt2/data/accounting.db /rmt2/data/authentication.db /rmt2/data/contacts.db /rmt2/data/mime.db /rmt2/data/projecttracker.db /rmt2/data/rmt2.db
-
+/Applications/SQLAnywhere16/System/bin64s/dbsrv16 -n rmt2devdb01 -ud /Users/royterrell/data/sybase/accounting.db /Users/royterrell/data/sybase/authentication.db /Users/royterrell/data/sybase/mime.db /Users/royterrell/data/sybase/projecttracker.db /Users/royterrell/data/sybase/rmt2.db /Users/royterrell/data/sybase/contacts.db
