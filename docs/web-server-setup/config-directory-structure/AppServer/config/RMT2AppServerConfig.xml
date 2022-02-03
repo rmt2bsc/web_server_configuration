@@ -54,6 +54,7 @@
 	       <Password>610hoover</Password>
 	       <Resourcetype>file</Resourcetype>
 	       <TemplatePath>\\source\\dotcom5\\aviall\\resources\\templates\\</TemplatePath> 
+	       <GenerateEmailConfirmation>true</GenerateEmailConfirmation>
 	   </EmailConfig>
 	   <ConsumerMsgHandlerMappingsKey>msg_handler_reg_pkg</ConsumerMsgHandlerMappingsKey>
 	   <ConsumerMsgHandlerMappingsLocation>config.transactions</ConsumerMsgHandlerMappingsLocation>
