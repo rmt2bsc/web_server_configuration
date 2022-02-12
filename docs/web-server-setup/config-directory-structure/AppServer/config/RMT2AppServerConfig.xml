@@ -527,6 +527,17 @@
         <host/>
     </Service>
     <Service>
+        <Name>Import project client data</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>admin</module>
+        <transaction>IMPORT_CLIENT</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for importing accounting customers into the project tracker system as clients.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
         <Name>Query project profile</Name>
         <ServiceType>JMS</ServiceType>
         <application>projecttracker</application>
