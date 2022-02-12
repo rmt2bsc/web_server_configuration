@@ -538,6 +538,17 @@
         <host/>
     </Service>
     <Service>
+        <Name>Delete project client</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>admin</module>
+        <transaction>DELETE_CLIENT</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for deleting project clients from the project tracker system.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
         <Name>Query project profile</Name>
         <ServiceType>JMS</ServiceType>
         <application>projecttracker</application>
