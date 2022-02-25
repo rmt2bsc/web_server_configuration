@@ -353,6 +353,17 @@
         <host/>
     </Service>
     <Service>
+        <Name>Query full object graph timesheet</Name>
+        <ServiceType>JMS</ServiceType>
+        <application>projecttracker</application>
+        <module>timesheet</module>
+        <transaction>GET_FULL_GRAPH_TIMESHEET</transaction>
+        <destination>JMS_PROJECTTRACKER_QUEUE</destination>
+        <description>Operaton for fetching the full object graph of the timesheet which includes base timesheet information, time entries, and business contact information.</description>
+        <secure>false</secure>
+        <host/>
+    </Service>
+    <Service>
         <Name>Create or modify timesheet</Name>
         <ServiceType>JMS</ServiceType>
         <application>projecttracker</application>
