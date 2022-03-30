@@ -1,0 +1,1 @@
+/opt/sqlanywhere16/bin64s/dbsrv16 -n rmtdaldev10 -ud /home/appdev/data/sybase/accounting.db /home/appdev/data/sybase/authentication.db /home/appdev/data/sybase/mime.db /home/appdev/data/sybase/projecttracker.db /home/appdev/data/sybase/rmt2.db /home/appdev/data/sybase/contacts.db
