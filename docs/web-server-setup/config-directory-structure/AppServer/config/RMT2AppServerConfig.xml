@@ -168,6 +168,17 @@
 			<host />
 		</Service>
 		<Service>
+				<Name>Query project type</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>lookup</module>
+				<transaction>GET_PROJECT_TYPE</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for fetching project types</description>
+				<secure>false</secure>
+				<host/>
+  	</Service>
+		<Service>
 			<Name>Load audio metadata</Name>
 			<ServiceType>JMS</ServiceType>
 			<application>media</application>
