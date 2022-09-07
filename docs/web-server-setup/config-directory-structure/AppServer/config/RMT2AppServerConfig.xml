@@ -178,6 +178,17 @@
 				<secure>false</secure>
 				<host/>
   	</Service>
+  	<Service>
+				<Name>Query all media lookup data types</Name>
+				<ServiceType>JMS</ServiceType>
+				<application>media</application>
+				<module>lookup</module>
+				<transaction>GET_LOOKUP_VALUES</transaction>
+				<destination>JMS_MEDIA_QUEUE</destination>
+				<description>Operaton for fetching all media lookup data types</description>
+				<secure>false</secure>
+				<host/>
+		</Service>
 		<Service>
 			<Name>Load audio metadata</Name>
 			<ServiceType>JMS</ServiceType>
