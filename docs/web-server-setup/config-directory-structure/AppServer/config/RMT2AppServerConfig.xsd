@@ -4,7 +4,13 @@
       <xs:sequence>
         <xs:element type="xs:string" name="LoggerConfigPath">
           <xs:annotation>
-            <xs:documentation>*******************************  Application Properties           *******************************</xs:documentation>
+            <xs:documentation>Path to Log4j config file</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <!-- ***************  Application Properties  ************** -->
+        <xs:element type="xs:string" name="AppConfigContextPath">
+          <xs:annotation>
+            <xs:documentation>Path to the AppServer directory</xs:documentation>
           </xs:annotation>
         </xs:element>
         <xs:element type="xs:string" name="ContainerManagedPool"/>
@@ -60,6 +66,7 @@
               <xs:element type="xs:string" name="environment"/>
               <xs:element type="xs:anyURI" name="soaphost"/>
               <xs:element type="xs:string" name="SaxDriver"/>
+              <xs:element type="xs:string" name="authenticator"/>
               <xs:element name="EmailConfig">
                 <xs:complexType>
                   <xs:sequence>
@@ -72,6 +79,7 @@
                     <xs:element type="xs:string" name="Password"/>
                     <xs:element type="xs:string" name="Resourcetype"/>
                     <xs:element type="xs:string" name="TemplatePath"/>
+                    <xs:element type="xs:boolean" name="GenerateEmailConfirmation" default="true"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
